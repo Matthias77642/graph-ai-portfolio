@@ -14,7 +14,6 @@
     body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65}
     html{scroll-behavior:smooth}
     .wrap{width:min(1150px,94vw);margin:0 auto}
-
     header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
     .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
     .brand{display:flex;gap:10px;align-items:center}
@@ -22,33 +21,26 @@
     .brand h1{font-family:'Plus Jakarta Sans';font-size:1.1rem;margin:0}
     .navlinks{display:flex;gap:18px}
     .navlinks a{font-weight:700;color:var(--text);text-decoration:none}
-
     section{padding:56px 0}
     h2{font-family:'Plus Jakarta Sans';font-weight:900;font-size:1.9rem;margin:0 0 20px}
     .lead{color:var(--muted)}
     .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
-
     .hero{padding:56px 0 24px}
     .heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-
     /* About me */
     .about{display:grid;grid-template-columns:320px 1fr;gap:32px;align-items:flex-start}
     .about img{width:100%;border-radius:20px;box-shadow:0 10px 25px rgba(31,36,51,.15)}
     .pubs{display:grid;gap:10px;margin-top:14px}
     .pub{padding:12px 14px;border:1px solid var(--border);border-radius:14px;background:#fff}
     .pub small{color:var(--muted)}
-
     /* Course */
     .modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
     .module{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
-
     /* Weeks */
     .weeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
     .week{background:#fff;border:1px dashed #cdd7ee;border-radius:16px;padding:16px;box-shadow:var(--shadow)}
     .soon{display:inline-block;margin-top:6px;padding:8px 12px;border-radius:999px;border:1px solid #cdd7ee;color:#41507a;background:#f5f8ff}
-
     footer{padding:40px 0 60px;color:#6a7186}
-
     @media(max-width:900px){
       .heroGrid{grid-template-columns:1fr}
       .about{grid-template-columns:1fr}
@@ -62,7 +54,6 @@
       <nav class="navlinks"><a href="#about">About me</a><a href="#course">About the course</a><a href="#weeks">Weekly submissions</a></nav>
     </div>
   </header>
-
   <main>
     <section class="hero">
       <div class="wrap heroGrid">
@@ -75,7 +66,6 @@
         </aside>
       </div>
     </section>
-
     <section id="about">
       <div class="wrap">
         <h2>About me</h2>
@@ -96,7 +86,6 @@
         </div>
       </div>
     </section>
-
     <section id="course">
       <div class="wrap">
         <h2>About the course</h2>
@@ -113,7 +102,6 @@
         </div>
       </div>
     </section>
-
     <section id="weeks">
       <div class="wrap">
         <h2>My weekly submissions</h2>
@@ -127,7 +115,6 @@
         </div>
       </div>
     </section>
-
     <footer>
       <div class="wrap">
         <p>Direct contact available upon request. Email intentionally omitted to prevent spam.</p>
