@@ -7,119 +7,265 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg1:#f7faff; --bg2:#eef3fb; --surface:#ffffff; --border:#dfe7f5; --text:#1f2433; --muted:#565c6e; --accent:#5b7cff;
-      --radius:20px; --shadow:0 6px 18px rgba(31,36,51,.08);
+      --bg1:#f7faff; --bg2:#eef3fb; --surface:#ffffff; --border:#dfe7f5; --text:#1f2433; --muted:#565c6e; --accent:#5b7cff; --accent2:#42c6a3;
+      --radius:20px; --radius2:26px; --shadow:0 6px 18px rgba(31,36,51,.08), 0 1px 0 rgba(31,36,51,.06);
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65}
+    html,body{height:100%}
     html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
     .wrap{width:min(1150px,94vw);margin:0 auto}
-    header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+
+    /* Header / nav */
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.75);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;gap:10px;align-items:center}
-    .logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--accent),#9aaaff)}
+    .logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--accent),#9aaaff);box-shadow:0 6px 16px rgba(91,124,255,.35)}
     .brand h1{font-family:'Plus Jakarta Sans';font-size:1.1rem;margin:0}
     .navlinks{display:flex;gap:18px}
-    .navlinks a{font-weight:700;color:var(--text);text-decoration:none}
-    section{padding:56px 0}
-    h2{font-family:'Plus Jakarta Sans';font-weight:900;font-size:1.9rem;margin:0 0 20px}
+    .navlinks a{color:var(--text);font-weight:700}
+
+    /* Sections */
+    section{padding:54px 0}
+    h2{font-family:'Plus Jakarta Sans';font-weight:900;font-size:1.9rem;margin:0 0 16px}
     .lead{color:var(--muted)}
-    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
-    .hero{padding:56px 0 24px}
-    .heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+
+    /* Hero */
+    .hero{padding:54px 0 18px}
+    .heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+    .heroStats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .tile{padding:14px;border:1px solid var(--border);border-radius:16px;background:#fff;box-shadow:var(--shadow)}
+    .kpi{font-weight:800}
+
     /* About me */
-    .about{display:grid;grid-template-columns:320px 1fr;gap:32px;align-items:flex-start}
-    .about img{width:100%;border-radius:20px;box-shadow:0 10px 25px rgba(31,36,51,.15)}
-    .pubs{display:grid;gap:10px;margin-top:14px}
+    .about{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center}
+    .about img{width:100%;max-width:480px;border-radius:26px;box-shadow:0 14px 36px rgba(31,36,51,.12)}
+    .pubs{display:grid;gap:10px}
     .pub{padding:12px 14px;border:1px solid var(--border);border-radius:14px;background:#fff}
     .pub small{color:var(--muted)}
-    /* Course */
+
+    /* Course grid */
     .modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
     .module{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+    .module h4{margin:2px 0 8px;font-size:1.02rem}
+    .module ul{margin:8px 0 0 18px}
+    .twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+
     /* Weeks */
-    .weeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .weeks{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
     .week{background:#fff;border:1px dashed #cdd7ee;border-radius:16px;padding:16px;box-shadow:var(--shadow)}
-    .soon{display:inline-block;margin-top:6px;padding:8px 12px;border-radius:999px;border:1px solid #cdd7ee;color:#41507a;background:#f5f8ff}
+    .week h5{margin:0 0 8px}
+    .soon{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid #cdd7ee;color:#41507a;background:linear-gradient(180deg,#f8fbff,#f1f5ff)}
+
     footer{padding:40px 0 60px;color:#6a7186}
+    .badges{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--border)}
+
     @media(max-width:900px){
       .heroGrid{grid-template-columns:1fr}
       .about{grid-template-columns:1fr}
+      .twocol{grid-template-columns:1fr}
+      .about img{margin:0 auto 24px}
     }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
-      <div class="brand"><div class="logo">AI</div><h1>Generative AI for Work & Research — Portfolio</h1></div>
-      <nav class="navlinks"><a href="#about">About me</a><a href="#course">About the course</a><a href="#weeks">Weekly submissions</a></nav>
+      <div class="brand">
+        <div class="logo">AI</div>
+        <h1>Generative AI for Work & Research — Portfolio</h1>
+      </div>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#about">About me</a>
+        <a href="#course">About the course</a>
+        <a href="#weeks">Weekly submissions</a>
+      </nav>
     </div>
   </header>
+
   <main>
+    <!-- Hero -->
     <section class="hero">
       <div class="wrap heroGrid">
         <div>
           <h2>From epidemiology to practical AI workflows</h2>
-          <p class="lead">This page documents my participation in the 8‑week <em>Generative AI for Work & Research</em> course, focusing on responsible, no‑code AI workflows.</p>
+          <p class="lead">This page curates my participation in the 8‑week <em>Generative AI for Work & Research</em> course. It highlights goals, modules, and weekly deliverables as I explore responsible, no‑code automation for research and communication.</p>
         </div>
         <aside class="card">
-          <p><strong>8 weeks</strong> · Live cohort<br><strong>Hands‑on</strong> · No‑code tools<br><strong>Capstone</strong> · Project showcase</p>
+          <div class="heroStats">
+            <div class="tile"><div class="kpi">8 weeks</div><div class="lead">Live cohort</div></div>
+            <div class="tile"><div class="kpi">Hands‑on</div><div class="lead">No‑code tools</div></div>
+            <div class="tile"><div class="kpi">Capstone</div><div class="lead">Project & showcase</div></div>
+            <div class="tile"><div class="kpi">Certificate</div><div class="lead">Shareable</div></div>
+          </div>
         </aside>
       </div>
     </section>
+
+    <!-- About me -->
     <section id="about">
       <div class="wrap">
         <h2>About me</h2>
         <div class="about">
-          <img src="https://raw.githubusercontent.com/Matthias77642/graph-ai-portfolio/fd21203e7d6d4ac1236984d7a14e283160ed2d03/snf-leitung-matthias-egger-1170x780-1.jpg" alt="Portrait of Matthias Egger" />
+          <img src="https://raw.githubusercontent.com/Matthias77642/graph-ai-portfolio/fd21203e7d6d4ac1236984d7a14e283160ed2d03/snf-leitung-matthias-egger-1170x780-1.jpg" alt="Portrait photo of Matthias Egger" />
           <div class="card">
             <p>Senior Research Fellow at the University of Zurich and Visiting Professor at the Universities of Bristol and Cape Town. My research focuses on large cohort studies, pragmatic trials, and meta‑analyses in infectious diseases and cancer. Contributions include work with the Swiss HIV Cohort Study, international HIV collaborations (ART Cohort Collaboration, IeDEA), the WHO Ebola ring vaccination trial, and the Swiss National Cohort.</p>
             <ul>
               <li><strong>Current roles:</strong> Senior Research Fellow (University of Zurich); Visiting Professor (Bristol; Cape Town).</li>
-              <li><strong>Interests:</strong> Meta‑analysis, observational methods, modelling, reporting guidelines (STROBE, CONSORT), research‑on‑research.</li>
-              <li><strong>Past leadership:</strong> Professor of Epidemiology & Public Health (University of Bern); President, Swiss National Science Foundation Research Council.</li>
+              <li><strong>Interests:</strong> Meta‑analysis, observational methods, modelling, reporting guidelines (STROBE, CONSORT), and research‑on‑research.</li>
+              <li><strong>Past leadership:</strong> Professor of Epidemiology & Public Health (University of Bern); President of the Research Council (Swiss National Science Foundation).</li>
             </ul>
-            <div class="pubs">
-              <div class="pub"><strong>Bias in meta‑analysis detected by a simple, graphical test.</strong><br><small>BMJ, 1997</small></div>
-              <div class="pub"><strong>Prognosis of HIV‑1–infected patients starting HAART.</strong><br><small>Lancet, 2002</small></div>
+            <div class="pubs" aria-label="Selected publications">
+              <div class="pub"><strong>Bias in meta‑analysis detected by a simple, graphical test.</strong><br><small>BMJ, 1997 — with Davey Smith et al.</small></div>
+              <div class="pub"><strong>Prognosis of HIV‑1–infected patients starting HAART.</strong><br><small>Lancet, 2002 — ART Cohort Collaboration.</small></div>
+              <div class="pub"><strong>STROBE: Explanation and elaboration.</strong><br><small>PLOS Medicine, 2007 — with Vandenbroucke, von Elm, Altman, et al.</small></div>
+              <div class="pub"><strong>rVSV Ebola vaccine ring vaccination trial (interim results).</strong><br><small>Lancet, 2015 — with Henao‑Restrepo, Longini, et al.</small></div>
+              <div class="pub"><strong>Socioeconomic position and the COVID‑19 care cascade in Switzerland.</strong><br><small>Lancet Public Health, 2021 — with Riou, Panczak, Althaus, et al.</small></div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- About the course -->
     <section id="course">
       <div class="wrap">
         <h2>About the course</h2>
         <div class="card">
-          <p><strong>Generative AI for Work & Research</strong> is an 8‑week live cohort program centered on no‑code AI tools for responsible automation.</p>
-          <div class="modules">
-            <div class="module"><strong>Websites & Documents</strong><p>Markdown, HTML, presentations</p></div>
-            <div class="module"><strong>Data Analysis</strong><p>Automated analysis & dashboards</p></div>
-            <div class="module"><strong>Research & Text</strong><p>Literature review & summarization</p></div>
-            <div class="module"><strong>Custom GPTs</strong><p>RAG & chatbots</p></div>
-            <div class="module"><strong>Automation</strong><p>Agent‑based workflows</p></div>
-            <div class="module"><strong>Capstone</strong><p>Final project & showcase</p></div>
+          <p><strong>Generative AI for Work & Research</strong> is an 8‑week live cohort program that focuses on <em>no‑code AI tools for responsible task automation</em>. The bootcamp features weekly live workshops, help sessions, a private community, personalized feedback, capstone coaching, a shareable certificate, and lifetime access to a tutorial library.</p>
+          <div class="modules" aria-label="Course modules">
+            <article class="module">
+              <h4>Module 1 — Websites, Documents & Presentations</h4>
+              <ul>
+                <li>How LLMs are trained; overview of providers</li>
+                <li>Generate Markdown, LaTeX, and HTML</li>
+                <li>Build simple sites with no‑code tools</li>
+                <li>Markdown for structured research docs</li>
+                <li>AI presentation tools for science comms</li>
+              </ul>
+            </article>
+            <article class="module">
+              <h4>Module 2 — AI‑Automated Data Analysis</h4>
+              <ul>
+                <li>Quick analysis with code interpreters</li>
+                <li>Automated dashboards</li>
+                <li>Dataset processing & transformation</li>
+                <li>Batch file operations</li>
+                <li>Automated reports & visualizations</li>
+              </ul>
+            </article>
+            <article class="module">
+              <h4>Module 3 — GenAI for Research & Text Analysis</h4>
+              <ul>
+                <li>Literature reviews with AI tools</li>
+                <li>Text classification & sentiment analysis</li>
+                <li>Knowledge maps & summarization flows</li>
+              </ul>
+            </article>
+            <article class="module">
+              <h4>Module 4 — Custom GPTs & Chatbots</h4>
+              <ul>
+                <li>LLM chat architecture & RAG</li>
+                <li>Custom GPTs for use‑cases</li>
+                <li>Interactive chatbots; knowledge bases</li>
+              </ul>
+            </article>
+            <article class="module">
+              <h4>Module 5 — AI for Task Automation</h4>
+              <ul>
+                <li>Agent‑based systems</li>
+                <li>Email and browser automations</li>
+                <li>Multi‑step workflow design</li>
+              </ul>
+            </article>
+            <article class="module">
+              <h4>Module 6 — GenAI for Communication & Outreach</h4>
+              <ul>
+                <li>Research summaries for varied audiences</li>
+                <li>Scientific figures & diagrams with AI</li>
+                <li>Video abstracts & content scheduling</li>
+              </ul>
+            </article>
+            <article class="module">
+              <h4>Module 7 — Capstone Project & Showcase</h4>
+              <ul>
+                <li>Progress checks & peer feedback</li>
+                <li>Final presentation & public Q&A</li>
+              </ul>
+            </article>
+          </div>
+          <div class="twocol" style="margin-top:14px">
+            <div class="card">
+              <h4 style="margin:6px 0 8px">Bootcamp features</h4>
+              <ul>
+                <li>Weekly live workshops & help sessions</li>
+                <li>Private community & personalized feedback</li>
+                <li>Capstone coaching & showcase</li>
+                <li>Shareable certificate</li>
+                <li>Lifetime tutorial library access</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4 style="margin:6px 0 8px">Grading rubric</h4>
+              <ul>
+                <li>Online quizzes — 15%</li>
+                <li>Workshop assignments — 35%</li>
+                <li>Attendance & participation — 10%</li>
+                <li>Final project — 40%</li>
+              </ul>
+              <p class="lead">Passing grade: 80%. Attend ≥ 5 workshops for full attendance credit.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Weekly submissions -->
     <section id="weeks">
       <div class="wrap">
         <h2>My weekly submissions</h2>
-        <div class="weeks">
-          <div class="week"><strong>Week 1</strong><p>Websites & documents</p><span class="soon">Link coming soon</span></div>
-          <div class="week"><strong>Week 2</strong><p>Automated data analysis</p><span class="soon">Link coming soon</span></div>
-          <div class="week"><strong>Week 3</strong><p>Research & text analysis</p><span class="soon">Link coming soon</span></div>
-          <div class="week"><strong>Week 4</strong><p>Custom GPTs</p><span class="soon">Link coming soon</span></div>
-          <div class="week"><strong>Week 5</strong><p>Task automation</p><span class="soon">Link coming soon</span></div>
-          <div class="week"><strong>Week 6</strong><p>Communication & outreach</p><span class="soon">Link coming soon</span></div>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div class="wrap">
-        <p>Direct contact available upon request. Email intentionally omitted to prevent spam.</p>
-      </div>
-    </footer>
-  </main>
-</body>
-</html>
+        <div class="card">
+          <p class="lead">Placeholders for links. Each item will point to a notebook, dashboard, demo, or write‑up as they are finalized.</p>
+          <div class="weeks">
+            <div class="week">
+              <h5>Week 1 — Websites & Documents</h5>
+              <p>Set up this portfolio and create a structured Markdown template for project notes.</p>
+              <span class="soon">Link coming soon</span>
+            </div>
+            <div class="week">
+              <h5>Week 2 — Automated Data Analysis</h5>
+              <p>Rapid exploratory analysis and an auto‑generated report with reproducible steps.</p>
+              <span class="soon">Link coming soon</span>
+            </div>
+            <div class="week">
+              <h5>Week 3 — Research & Text Analysis</h5>
+              <p>Literature search pipeline with classification, summarization, and knowledge mapping.</p>
+              <span class="soon">Link coming soon</span>
+            </div>
+            <div class="week">
+              <h5>Week 4 — Custom GPTs & RAG</h5>
+              <p>Prototype a domain‑aware assistant grounded in selected publications.</p>
+              <span class="soon">Link coming soon</span>
+            </div>
+            <div class="week">
+              <h5>Week 5 — Task Automation</h5>
+              <p>Design an agent that monitors literature and drafts digest summaries for review.</p>
+              <span class="soon">Link coming soon</span>
+            </div>
+            <div class="week">
+              <h5>Week 6 — Communication & Outreach</h5>
+              <p>Create visual abstracts and a short video explainer for a recent study.</p>
+              <span class="soon">Link coming soon</span>
+            </div>
+            <div class="week">
+              <h5>Week 7 — Capstone Check‑in</h5>
+              <p>Peer feedback on the capstone prototype; refine evaluation metrics.</p>
+              <span class="soon">Link coming soon</span>
+            </div>
+            <div class="week">
+              <h5>Week 8 — Final Showcase</h5>
+              <p>Present the finished solution with transparent methods and limitations
