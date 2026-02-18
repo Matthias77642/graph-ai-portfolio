@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Strategy Report - University of Zurich</title>
+    <style>
+        :root {
+            --primary-blue: #0028A5;
+            --secondary-blue: #0056b3;
+            --accent-cyan: #00d4ff;
+            --bg-light: #f4f7f9;
+            --text-dark: #2c3e50;
+            --text-muted: #546e7a;
+            --white: #ffffff;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --gradient: linear-gradient(135deg, #0028A5 0%, #00d4ff 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            border-left: 5px solid var(--accent-cyan);
+            padding-left: 15px;
+            margin-top: 40px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .callout {
+            background: #eef2f7;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 6px solid var(--accent-cyan);
+            position: relative;
+        }
+
+        .callout-insight {
+            background: rgba(0, 212, 255, 0.1);
+            border-left-color: var(--primary-blue);
+        }
+
+        .callout h4 {
+            margin-top: 0;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: left;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .badge-high { background-color: #e74c3c; }
+        .badge-medium { background-color: #f39c12; }
+        .badge-low { background-color: #3498db; }
+
+        .roadmap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .roadmap-step {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .roadmap-step span {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--accent-cyan);
+        }
+
+        .footer {
+            background: #fdfdfd;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid #eee;
+        }
+
+        .divider {
+            height: 2px;
+            background: var(--gradient);
+            width: 100px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>GenAI Strategy Report</h1>
+        <p>Prepared for: Pascale Weber, University of Zurich (UZH)</p>
+        <p>Focus: Automating Student Administration Workflows</p>
+    </header>
+
+    <div class="content">
+        <section>
+            <h2>Executive Summary</h2>
+            <p>
+                The University of Zurich (UZH) stands at the forefront of AI integration in Switzerland, with established policies and executive education programs already in place. To address the specific challenge of <strong>student administration automation</strong>, this report proposes a transition from manual, high-volume administrative tasks to a GenAI-augmented ecosystem. By leveraging Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG), UZH can significantly reduce response times, minimize manual data entry, and provide 24/7 personalized support to its diverse student body.
+            </p>
+        </section>
+
+        <section>
+            <h2>Company Overview</h2>
+            <p>
+                As Switzerland's largest university, UZH manages complex administrative workflows involving thousands of students, researchers, and staff. The institution's current commitment to "AI literacy" and its proactive approach to GenAI in research and teaching provide a strong cultural and technical foundation for administrative transformation. The focus on Swiss-based excellence requires solutions that are secure, multilingual, and highly accurate.
+            </p>
+            <div class="callout callout-insight">
+                <h4>Institutional Strength</h4>
+                UZH already offers a <strong>CAS in Generative AI</strong>, indicating internal expertise that can be harnessed to champion and oversee administrative automation projects, ensuring they align with academic standards and data privacy laws.
+            </div>
+        </section>
+
+        <section>
+            <h2>GenAI Opportunity Areas</h2>
+            <p>We have identified four primary domains where Generative AI can revolutionize student administration:</p>
+            <ul>
+                <li><strong>Automated Inquiry Resolution:</strong> Using RAG-based chatbots to answer 80% of routine questions regarding enrollment, deadlines, and requirements using the university’s official documentation.</li>
+                <li><strong>Intelligent Document Processing:</strong> Automating the extraction and validation of data from international transcripts, certificates, and application forms.</li>
+                <li><strong>Multilingual Support:</strong> Providing instantaneous, high-quality translation for administrative communications to support the international student population in Zurich.</li>
+                <li><strong>Proactive Advising:</strong> Analyzing student progress data to generate personalized reminders and suggestions for course registration or administrative compliance.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Recommended Initiatives</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Initiative Name</th>
+                        <th>Description</th>
+                        <th>Impact</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>"UZH Student Concierge"</strong></td>
+                        <td>A GenAI chatbot trained on student handbooks and FAQs for 24/7 support.</td>
+                        <td>High: Reduces email volume by 40-60%.</td>
+                        <td><span class="badge badge-high">High</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Smart Transcript Parser</strong></td>
+                        <td>Tool to automatically extract grades and credits from diverse PDF formats.</td>
+                        <td>Medium: Speeds up admissions processing.</td>
+                        <td><span class="badge badge-medium">Medium</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Admin Email Pilot</strong></td>
+                        <td>AI assistant for staff to draft responses to complex student queries.</td>
+                        <td>High: Improves staff productivity and morale.</td>
+                        <td><span class="badge badge-high">High</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Policy Navigator</strong></td>
+                        <td>Internal tool for staff to query complex Swiss education regulations.</td>
+                        <td>Low: Ensures high compliance and consistency.</td>
+                        <td><span class="badge badge-low">Low</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="callout">
+            <h4>Key Strategic Insight</h4>
+            <p>By implementing <strong>Human-in-the-Loop (HITL)</strong> workflows, UZH can ensure that while AI drafts responses and extracts data, human administrators remain the final decision-makers, maintaining the high quality and trust associated with the University of Zurich brand.</p>
+        </div>
+
+        <section>
+            <h2>Implementation Roadmap</h2>
+            <div class="roadmap">
+                <div class="roadmap-step">
+                    <span>01</span>
+                    <strong>Discovery</strong>
+                    <p>Audit current manual workflows and map data silos (Month 1-2).</p>
+                </div>
+                <div class="roadmap-step">
+                    <span>02</span>
+                    <strong>Pilot</strong>
+                    <p>Deploy "Student Concierge" for one department (Month 3-5).</p>
+                </div>
+                <div class="roadmap-step">
+                    <span>03</span>
+                    <strong>Scale</strong>
+                    <p>Full integration with SIS (Student Information Systems) (Month 6+).</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <p>
+                The automation of student administration at the University of Zurich is not merely a cost-saving measure, but a strategic upgrade to the student experience. By adopting GenAI, UZH can free its staff from repetitive tasks, allowing them to focus on high-value student support and academic excellence. Given UZH's existing AI policy and educational infrastructure, the institution is uniquely positioned to lead the Swiss academic sector in administrative innovation.
+            </p>
+        </section>
+        
+        <div class="divider"></div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 AI Strategy Consulting | Generated for University of Zurich</p>
+        <p>Contact: Pascale Weber (weberp@pm.me)</p>
+    </div>
+</div>
+
+</body>
+</html>
