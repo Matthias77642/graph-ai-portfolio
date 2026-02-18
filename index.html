@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,6 +74,21 @@
     }
     .btn:hover{ text-decoration:none; border-color:#c9d6f2 }
 
+    /* Contact form */
+    .formWrap{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .formWrap iframe{
+      width:100%;
+      height:922px;
+      border:0;
+      display:block;
+    }
+
     footer{padding:40px 0 60px;color:#6a7186}
     .badges{display:flex;gap:10px;flex-wrap:wrap}
     .badge{padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--border)}
@@ -96,6 +112,7 @@
         <a href="#about">About me</a>
         <a href="#course">About the course</a>
         <a href="#weeks">Weekly submissions</a>
+        <a href="#consultation">Consultation</a>
       </nav>
     </div>
   </header>
@@ -310,6 +327,19 @@
       </div>
     </section>
 
+    <!-- Contact for Consultation -->
+    <section id="consultation">
+      <div class="wrap">
+        <h2>Contact for Consultation</h2>
+        <div class="card">
+          <p class="lead">Use the form below to request a consultation. I’ll get back to you as soon as possible.</p>
+          <div class="formWrap" aria-label="Consultation request form">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfbn0gvNshceqmGhLb7gtN2f700n5XgW_7x60nzBGR4Pz6PpQ/viewform?embedded=true" width="640" height="922" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <div class="wrap">
         <div class="badges" aria-label="Footer badges">
@@ -323,3 +353,4 @@
   </main>
 </body>
 </html>
+
